@@ -59,7 +59,7 @@ echo "[*] ETAPA 1: Perfurando firewall com naabu (varredura 1-65535)..."
 echo "[*] Usando binário: $COMANDO_NAABU"
 
 # Executar com flag explícita -scan-type syn para forçar SYN scan e capturar saída para validação
-SAIDA_NAABU=$($COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 1000 -verify -scan-type syn -o portas_reais.txt 2>&1)
+SAIDA_NAABU=$($COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 500 -verify -scan-type syn -o portas_reais.txt 2>&1)
 
 # Validação estrita: verificar se caiu em CONNECT scan (sem privilégios)
 if echo "$SAIDA_NAABU" | grep -q "Running CONNECT scan with non root privileges"; then
@@ -67,12 +67,12 @@ if echo "$SAIDA_NAABU" | grep -q "Running CONNECT scan with non root privileges"
     echo "[!] Tentando executar como root real..."
     
     # Tentar executar como root real usando sudo -S com senha
-    SAIDA_NAABU=$(echo "123" | sudo -S $COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 1000 -verify -scan-type syn -o portas_reais.txt 2>&1)
+    SAIDA_NAABU=$(echo "123" | sudo -S $COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 500 -verify -scan-type syn -o portas_reais.txt 2>&1)
     
     if echo "$SAIDA_NAABU" | grep -q "Running CONNECT scan with non root privileges"; then
         echo "[!] FALHA: Mesmo como root real, caiu em CONNECT scan"
         echo "[!] Aceitando CONNECT scan como fallback (será mais lento, mas funcional)..."
-        SAIDA_NAABU=$($COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 1000 -verify -o portas_reais.txt 2>&1)
+        SAIDA_NAABU=$($COMANDO_NAABU -host "$TARGET" -p 1-65535 --rate 500 -verify -o portas_reais.txt 2>&1)
         echo "[*] Executando CONNECT scan (modo lento, mas funcional)"
     else
         echo "[*] SUCESSO: SYN scan com root privileges ativado"

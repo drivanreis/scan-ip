@@ -1,2 +1,225 @@
-Error #487: Your port specifications are illegal.  Example of proper form: "-100,200-1024,T:3000-4000,U:60000-"
-QUITTING!
+# Nmap 7.80 scan initiated Fri Jun 19 19:39:31 2026 as: nmap -p 7,9,13,21,22,23,25,26,37,53,79,80,81,88,106,110,111,113,119,135,139,143,144,179,199,389,427,443,444,445,465,513,514,515,543,544,548,554,587,631,646,873,990,993,995,1025,1026,1027,1028,1029,1110,1433,1720,1723,1755,1900,2000,2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000,6001,6646,7070,8000,8008,8009,8080,8081,8443,8888,9100,9999,10000,32768,49152,49153,49154,49155,49156,49157 -sV -sC -T4 -Pn -v --stats-every=5s -oN laudo_nmap.txt 138.122.82.214
+Increasing send delay for 138.122.82.214 from 0 to 5 due to 11 out of 21 dropped probes since last increase.
+Nmap scan report for 138-122-82-214.mobtelecom.com.br (138.122.82.214)
+Host is up (0.10s latency).
+
+PORT      STATE SERVICE           VERSION
+7/tcp     open  echo?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+9/tcp     open  discard?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+13/tcp    open  daytime?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+21/tcp    open  ftp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+22/tcp    open  ssh?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_ssh-hostkey: ERROR: Script execution failed (use -d to debug)
+23/tcp    open  telnet?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+25/tcp    open  smtp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_smtp-commands: Couldn't establish connection on port 25
+26/tcp    open  rsftp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+37/tcp    open  time?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+53/tcp    open  domain?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+79/tcp    open  finger?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_finger: ERROR: Script execution failed (use -d to debug)
+80/tcp    open  http?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+81/tcp    open  hosts2-ns?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+88/tcp    open  kerberos-sec?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+106/tcp   open  pop3pw?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+110/tcp   open  tcpwrapped
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+111/tcp   open  tcpwrapped
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+113/tcp   open  tcpwrapped
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+119/tcp   open  tcpwrapped
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+135/tcp   open  tcpwrapped
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+139/tcp   open  netbios-ssn?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+143/tcp   open  imap?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+144/tcp   open  news?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+179/tcp   open  bgp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+199/tcp   open  smux?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+389/tcp   open  ldap?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+427/tcp   open  svrloc?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+443/tcp   open  https?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+444/tcp   open  snpp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+445/tcp   open  microsoft-ds?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+465/tcp   open  smtps?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_smtp-commands: Couldn't establish connection on port 465
+513/tcp   open  login?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+514/tcp   open  shell?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+515/tcp   open  printer?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+543/tcp   open  klogin?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+544/tcp   open  kshell?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+548/tcp   open  afp?
+|_afp-serverinfo: ERROR: Script execution failed (use -d to debug)
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+554/tcp   open  rtsp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+587/tcp   open  submission?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_smtp-commands: Couldn't establish connection on port 587
+631/tcp   open  ipp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+646/tcp   open  ldp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+873/tcp   open  rsync?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+990/tcp   open  ftps?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+993/tcp   open  imaps?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+995/tcp   open  pop3s?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1025/tcp  open  NFS-or-IIS?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1026/tcp  open  LSA-or-nterm?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1027/tcp  open  IIS?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1028/tcp  open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1029/tcp  open  ms-lsa?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1110/tcp  open  nfsd-status?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1433/tcp  open  ms-sql-s?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1720/tcp  open  h323q931?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1723/tcp  open  pptp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_pptp-version: ERROR: Script execution failed (use -d to debug)
+1755/tcp  open  wms?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+1900/tcp  open  upnp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+2000/tcp  open  cisco-sccp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+2001/tcp  open  dc?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+2049/tcp  open  nfs?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+2121/tcp  open  ccproxy-ftp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+2717/tcp  open  pn-requester?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+3000/tcp  open  ppp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+3128/tcp  open  squid-http?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+3306/tcp  open  mysql?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_mysql-info: ERROR: Script execution failed (use -d to debug)
+3389/tcp  open  ms-wbt-server?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+3986/tcp  open  mapper-ws_ethd?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+4899/tcp  open  radmin?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5000/tcp  open  upnp?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5009/tcp  open  airport-admin?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5051/tcp  open  ida-agent?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5060/tcp  open  sip?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5101/tcp  open  admdog?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5190/tcp  open  aol?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5357/tcp  open  wsdapi?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5432/tcp  open  postgresql?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5631/tcp  open  pcanywheredata?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5666/tcp  open  nrpe?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5800/tcp  open  vnc-http?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+5900/tcp  open  vnc?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+6000/tcp  open  X11?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_x11-access: ERROR: Script execution failed (use -d to debug)
+6001/tcp  open  X11:1?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+|_x11-access: ERROR: Script execution failed (use -d to debug)
+6646/tcp  open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+7070/tcp  open  realserver?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8000/tcp  open  http-alt?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8008/tcp  open  http?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8009/tcp  open  ajp13?
+|_ajp-methods: Failed to get a valid response for the OPTION request
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8080/tcp  open  http-proxy?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8081/tcp  open  blackice-icecap?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8443/tcp  open  https-alt?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+8888/tcp  open  sun-answerbook?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+9100/tcp  open  jetdirect?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+9999/tcp  open  abyss?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+10000/tcp open  snet-sensor-mgmt?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+32768/tcp open  filenet-tms?
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49152/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49153/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49154/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49155/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49156/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+49157/tcp open  unknown
+|_auth-owners: ERROR: Script execution failed (use -d to debug)
+
+Host script results:
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun 19 20:22:39 2026 -- 1 IP address (1 host up) scanned in 2587.69 seconds
