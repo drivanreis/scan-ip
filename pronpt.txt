@@ -1,0 +1,21 @@
+Aja como um Engenheiro de Automação e Especialista em Segurança de Redes Sênior. Preciso que você assuma o desenvolvimento e o teste ativo do nosso script "scan-IpPort-Compliance.sh".
+
+### O PROBLEMA TÉCNICO (Linha de Raciocínio):
+Estamos tentando rodar a ETAPA 1 (varredura com o naabu), mas ele insiste em exibir a seguinte mensagem de erro no terminal:
+"[INF] Running CONNECT scan with non root privileges"
+
+Isso indica que o Naabu foi algemado pelo sistema operacional. Em vez de fazer um SYN Scan ultra rápido (usando pacotes brutos), ele cai no modo emergencial CONNECT Scan (lento, esperando timeouts de rede e sem usar o processador). Isso ocorre porque o Kali Linux frequentemente instala o Naabu através de um "wrapper" (um script de atalho) em '/usr/bin/naabu' que limpa as variáveis de privilégio do root antes de invocar o binário real, ou porque o sistema bloqueia herança de capabilities em scripts.
+
+### SUA MISSÃO DE AUTOMAÇÃO E TESTE:
+Quero que você pegue o código atual do nosso script e crie uma rotina de autodistribuição e teste em loop. Você deve executar o script em background, ler a saída do Naabu e agir de forma inteligente:
+
+1. Execução de Teste: Execute o script. A senha do sudo do ambiente é "123" (use artifícios como 'echo 123 | sudo -S' para automatizar seus testes locais se necessário).
+2. Validação Estrita: Se na saída do terminal aparecer a frase "[INF] Running CONNECT scan with non root privileges", interrompa imediatamente o processo.
+3. Tentativa de Soluções (Em ordem de prioridade até sumir o erro):
+
+   - Abordagem A (Caminho Absoluto Real): Em vez de chamar apenas 'naabu', faça o script localizar o binário verdadeiro usando 'readlink -f $(which naabu)' e execute esse caminho absoluto com 'sudo' e com a flag explícita '-scan-type syn'.
+   
+   - Abordagem B (Bala de Prata - Compilação Pura): Se a Abordagem A falhar, configure o script para baixar o binário oficial e puro (compilado diretamente em Go, sem os wrappers do Kali) direto do GitHub do ProjectDiscovery (v2.6.1), movê-lo para '/usr/local/bin/naabu-pure', dar 'chmod +x' e chamá-lo diretamente com 'sudo'. Binários nativos puros não sofrem o rebaixamento de privilégio do gerenciador de pacotes do Kali.
+
+### O QUE QUERO RECEBER DE VOLTA:
+Não me devolva apenas conselhos. Quero o código final do "scan-IpPort-Compliance.sh" completamente reformulado por você, contendo a inteligência que resolveu esse problema de privilégio de uma vez por todas, garantindo que o output na tela exiba obrigatoriamente: "[INF] Running SYN scan with root privileges".
